@@ -7,11 +7,21 @@
     Learn more under: https://pyscaffold.org/
 """
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 if __name__ == "__main__":
     try:
-        setup(use_scm_version={"version_scheme": "no-guess-dev"})
+        setup(
+            use_scm_version={"version_scheme": "no-guess-dev"},
+            packages=find_packages(where="src"),
+            package_dir={"": "src"},
+            install_requires=["ollama"],
+            entry_points={
+                "console_scripts": [
+                    "pitchathonz = pitchathonz.skeleton:main"
+                ]
+            }
+        )
     except:  # noqa
         print(
             "\n\nAn error occurred while building the project, "
