@@ -1,3 +1,4 @@
 {
-  "model": "llama2"
+  "model": "llama2",
+  "output_path": "/tmp/pitchathonz.html"
 }
